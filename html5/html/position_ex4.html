@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		body ,h1, h2, h3, div {
+			margin: 0;
+		}
+
+		h1, h2, h3#cap {
+			text-transform: capitalize;
+		}
+		.header {
+			background-color: purple;
+			width: 100%;
+  		 	text-align: center;
+   			line-height: 20vh;
+		}
+		.nav {
+			background-color: orange;
+			float: left;
+			width: 30%;
+			height: calc(70vh - 20px);
+		}
+		.content {
+			background-color: yellow;
+			float: right;
+			width: 70%;
+			height: calc(70vh - 20px);
+		}
+		.footer {
+			background-color: lime;
+			clear: both;
+ 		 	text-align: center;
+ 		 	line-height: 10vh;
+		}
+		div #divtext {
+			padding: 20px;
+		}
+		.nav a:link {
+			color: skyblue;
+		}
+		.nav a:visited {
+			color: purple;
+		}
+		.header h1 {
+			margin: 0px;
+    		padding-top: 5px;
+		}
+		.footer p {
+			margin: 0px;
+    		color: white;
+		} 
+	</style>
+</head>
+<body>
+	<div class="header">
+		<h1>my blog page</h1>
+	</div>
+	<div class="nav">
+		<div id="divtext">
+			<h2>links</h2>
+			<ul>
+				<li><a href="https://www.w3schools.com/">W3C</a></li>
+				<li><a href="https://www.mozilla.org/ko/">MOZILLA</a></li>
+				<li><a href="https://www.htmldog.com/">HTML Dogs</a></li>
+			</ul>
+			<img alt="" src="../../images/hong.jpg" width="100px;">
+		</div>
+	</div>
+	<div class="content">
+		<div id="divtext">
+			<h3 id="cap">Semantic tage</h3>
+			<p>시멘틱 요소들은 브라우저에게 요소의 의미나 목적을 명확하게 알려주는 요소이다</p>
+			<h3>div와 span</h3>
+			<p>div은 "divide"의 약자로서 페이지를 논리적인 섹션으로 분리하는데 사용되는 태그이다. span 요소는 인라인 요소로서 텍스트를 위한 컨테이너로 사용할 수 있다.</p>
+		</div>
+	</div>
+	<div class="footer">
+		<p>Copyright (c) 2013 Hong</p>
+	</div>
+</body>
+</html>

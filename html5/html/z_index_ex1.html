@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+
+		img {
+			position: absolute; /*백그라운식으로 할꺼임 relative는 원래 있던 공간을 남겨두기 때문에 안됨*/
+			top: 10px;
+			left: 50px;
+			z-index: -1; /*이미지 위에 글자를 놓고 싶을때*/
+		}
+		.block1 {
+			background: green;
+		}
+		.block2 {
+			background: yellow;
+		}
+		.block3 {
+			background: blue;
+		}
+		
+		#divAbs {
+			position: relative;
+		}
+		#divAbs div {
+			position: absolute;
+			right: 100px;
+			top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<img alt="커피" src="../../images/cc.jfif" height="50px">
+	<p>얄리얄리얄랑양</p>
+	<div id= "divAbs">
+		<p class="block1"></p>
+		<p class="block2"></p>
+		<p class="block3"></p>
+	</div>
+	
+</body>
+</html>

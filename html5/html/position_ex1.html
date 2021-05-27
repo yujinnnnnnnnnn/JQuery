@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS position 연습</title>
+	<style type="text/css">
+		.block1 , .block2, .block3 {
+			width: 100px;
+			height: 50px;
+		}
+		
+		.block1 {
+			background-color: aqua;
+		}
+		.block2 {
+			background-color: gray;
+		}
+		.block3 {
+			background-color: olive;
+		}
+		#divRel div {
+			position: relative;
+			left: 100px;
+			top: 50px;
+		}
+		#divAbs { 
+			position: relative;
+		}
+		#divAbs div {
+			position: absolute;
+			left: 100px;
+			top: 50px;
+		}
+		#divFix div {
+			position: fixed;
+			right: 100px;
+			bottom: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h3>기본 위치 - position: static;</h3>
+		<p class="block1">블럭1</p>
+		<div class="block2">블럭2</div>
+		<p class="block3">블럭3</p>
+	</div>
+	<hr>
+	<div id="divRel">
+		<h3>위치1 위치 - position: relative;</h3> <!-- 원래있는 위치를 기준으로 속성을 이용하여 이동가능 -->
+		<p class="block1">블럭1</p>
+		<div class="block2">블럭2</div>
+		<p class="block3">블럭3</p>
+	</div>
+	<hr>
+	<div id="divAbs"> <!-- 부모인 div가 옵션이 없음 -->
+		<h3>위치1 위치 - position: absolute;</h3> 
+		<p class="block1">블럭1</p>
+		<div class="block2">블럭2</div>
+		<p class="block3">블럭3</p>
+	</div>
+	<hr>
+	<div id="divFix"> <!-- 스크롤을 올리고 내리고 해도 위치 변하지 않음 -->  
+		<h3>위치1 위치 - position: fixed;</h3> 
+		<p class="block1">블럭1</p>
+		<div class="block2">블럭2</div>
+		<p class="block3">블럭3</p>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
