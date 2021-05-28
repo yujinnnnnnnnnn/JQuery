@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		var value1, value2, value3, result;
+	
+		value1 = prompt("첫번째 숫자를 입력하세요", "정수로만 입력");
+		value2 = prompt("연산자를 입력하세여");
+		value3 = prompt("두번째 숫자를 입력하세요");
+		
+		result = value1 + value2 + value3 + " = ";
+		//result +=
+		if(value2 == "+"){
+			result = result += (parseInt(value1) + parseInt(value3))
+		}else if(value2 == "-"){
+			result = result += (parseInt(value1) - parseInt(value3))
+		}else if(value2 == "*"){
+			result = result += (parseInt(value1) * parseInt(value3))
+		}else if(value2 == "/"){
+			result = result += (parseInt(value1) / parseInt(value3))
+		}else if(value2 == "%"){
+			result = result += (parseInt(value1) % parseInt(value3))
+		}else {
+			alert("연산자 입력이 잘못되었습니다.");
+			result = "연산자 입력이 잘못되었습니다.";
+//			return; //function 일때만 가능
+		}
+		
+		document.write(result);
+		// document.getElementById("temp").innerHTML = result;
+		// alert(result);
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

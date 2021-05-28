@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function showMsg(year) {
+			alert("hi~" + year);
+// 			alert(month); //파라미터의 값이 body에 정의되어 있지않으면 오류는 안뜨지aks nudefined뜸
+		}
+		
+		//무명함수 정의
+		(function (year) {
+			alert("hi~" + year);
+		})(2021); //body부분의 onclick 함수 호출 부분
+		
+		function calculate(){
+			var ele = document.getElementById("Input1"); //요소를 가지고 오는것임
+			var val1 = ele.value; //value를 가지고오는것
+			
+			var val2 = document.getElementById("Input2").value;
+			var sum = Number(val1) + Number(val2); //사용하는 곳이 두군데 이상이면 변수로 사용하는게 좋음
+			document.getElementById("Result").value = sum;  
+			
+			document.getElementById("spInput1").innerHTML = val1; //input태그 이외엔 innerHTML사용
+			document.getElementById("spInput2").innerHTML = val2; //nudefine 과 null오류나면 
+			document.getElementById("spResult").innerHTML = sum;
+		}
+	</script>
+</head>
+<body>
+	<button type="button" onclick="showMsg(2021)">클릭하세요</button>
+	<button type="button" onclick="showMsg('강유진')">클릭하세요</button>  
+	<hr>
+	
+	<h1>덧셈 계산기</h1>
+	첫번째 정수 : <input type="text" id="Input1"> <br>
+	두번째 정수 : <input type="text" id="Input2"> <br>
+	<br>
+	결과 : <input type="text" id="Result"> <br>
+	<button type="button" onclick="calculate()">계산</button>
+	<br>
+	<p>첫번째 값 : <span id="spInput1"></span></p>
+	<p>두번째 값 : <span id="spInput2"></span></p>
+	<p>결과 : <span id="spResult"></span></p> 
+</body>
+</html>

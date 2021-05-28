@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		var str = "홍길동"; //전역변수 / function안에 선언되지 않은 변수(var)를 사용하면 전역변수로 작용됨(가급적 안쓰는게 좋음 )
+		
+		//prompt() 는 보안상 필드에서 사용을 하지 않음
+		function makeRan(){
+			//한자리 숫자 5개를 랜덤으로 생성해서 textarea에 넣어주기
+			//math.random() 사용
+			for(var i = 0; i < 5; i++){
+				var val = parseInt(Math.random() * 10);
+						//parseInt(Math.random() * 10)  Math.floor(Math.random() * 10);
+				console.log(val);
+				
+// 				if(i == 0){
+// 				document.getElementById("Result").value += val;
+					
+// 				}else if(i == 4) {
+// 					document.getElementById("Result").value += ", " + val + "\n";
+// 				}
+// 				else {
+// 					document.getElementById("Result").value += ", " + val;
+// 				}
+
+				if(i > 0){
+					document.getElementById("Result").value += ", ";
+					
+				}
+				document.getElementById("Result").value += val;
+			}
+			document.getElementById("Result").value += "\n";
+		}
+		
+		function closeWindow(){
+			var result = confirm("현재 창을 닫으시겠어요?");
+			console.log(result);
+			
+			if(result){
+				alert("창을 어떻게 닫지??");
+			}
+			if(!confirm("저장하시겠습니까?")){
+				return;
+			}
+			alert("저장되었습니다.")
+		
+		}
+		
+	</script>
+</head>
+<body>
+	<button type="button" onclick="makeRan()">시작</button>
+	<hr color="blue">
+	<h1>출력위치</h1>
+	<textarea rows="10" cols="" id="Result"></textarea>
+	
+	<hr>
+	<button type="button" onclick="closeWindow()">창닫기</button>
+	
+</body>
+</html>

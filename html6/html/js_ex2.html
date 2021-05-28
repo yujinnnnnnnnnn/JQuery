@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		div {
+			border: 1px solid;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<h1>자바스크립트 출력 방법</h1>
+	<p>화면에 데이터를 표시하는 방법으로는 뭐가 있을까</p>
+	<button type="button">눌러봐?</button>
+	<hr>
+	<div id="temp">
+	</div>
+	<script type="text/javascript">
+		document.write("할룽");
+		document.write("<hr>");
+		document.write("<h1>자바스크립트 출력 방법</h1>");
+		
+		// document.getElementById("temp") ==> <div> 요소 리턴 / 만약 head부분에 스크립트를 넣게 되면 temp가 생성되기전에 실행되기 때문에 안됨
+		document.getElementById("temp").innerHTML = "div입니다.";
+		document.getElementById("temp").innerHTML = "<p>화면에 데이터를 표시하는 방법으로는 뭐가 있을까</p>";  /*innerHTML 값이 p태그 값으로 바뀜*/
+	
+		//window.alert('테스트') => window생략가능
+		alert('테스트'); // 메세지 확인창 
+		
+		console.log('콘솔 로그라는데..'); // 브라우저의 콘솔에 적용되는것 메세지가 잘 호출되었는지 확인용으로 많이 사용
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function calc(){
+			//alert(1); //호출이 잘됐는지 확인용
+		//	var obj = document.getElementById("input1"); // <input type="text" id="input1">
+		//	console.log(obj);
+			//console.log(obj.value); //input요소는 value로 가져옴
+			//obj.value; //사용자가 입력한 값 반환
+			//var val1 = obj.value;
+			var val1 = document.getElementById("input1").value;
+			var val2 = document.getElementById("input2").value;
+			
+			//입력된 값 확인
+			if(val1 == ""){
+				alert("첫번째 정수 값이 입력되지 않았습니다.");
+				return;
+			}
+			
+			document.getElementById("sum").value = parseInt(val1) + parseInt(val2);
+			
+		}
+	</script>
+</head>
+<body>
+	<h1>덧셈계산기</h1>
+	첫번째 정수 : <input type="text" id="input1" value="홍길동"><br>
+	두번째 정수 : <input type="text" id="input2"><br>
+	합계 : <input type="text" id="sum"><br> 
+	<button type="button" onclick="calc();">계산</button>
+</body>
+</html>

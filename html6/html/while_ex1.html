@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+// 	var i = 0;
+// 	while(i < 10){
+// 		document.write("카운터 : " + i + "<br>");
+// 		i++;
+// 	}
+	
+// 	document.write("<hr>");
+	
+// 	var flag = true; //var 안해도 전역변수로 취급해서 안써줘도 되지만 명확히 쓰는게 좋음
+// 	i = 0;
+// 	while(flag){
+// 		document.write("카운터 : " + i + "<br>");
+// 		i++;
+		
+// 		if(i == 10){
+// 			flag = false;
+// 		}
+// 	}
+	
+// 	document.write("<hr>");
+	
+// 	i=0;
+// 	do{  //do-while잘 안씀
+// 		document.write("카운터 : " + i + "<br>");
+// 		i++;
+// 	}while(i < 10);
+	
+	//if문의 조건으로 0인 경우는 수행되지 않고, 그외는 수행됨
+	
+	//<<<<<<<<<<<<<<<<<<<<<<<<<문제>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	
+	//1~10까지의 합을 구하는 프로그램
+	function sum1(){
+		var sum = 0; //만약 선언만 한다면 타입을 알지 못해서 초기화를 해야함
+		for(var i=0; i < 10; i++){
+			sum += (i+1);
+		}
+		document.getElementById("result").innerHTML = sum;
+	}
+
+
+	//1~200까지의 짝수의 합을 구하는 프로그램 (continue사용)
+
+	function sum2(){
+		sum = 0;
+		for(var i = 1; i <= 200; i++){
+			//case 1) if문 일반적인 사용
+	// 		if((i % 2) == 0){ //짝수인 경우
+	// 			sum += i;			
+	// 		}
+			//case 2) continue사용
+	// 		if((i % 2) == 0){ 
+	// 			sum += i;			
+	// 		}else{
+	// 			continue;
+	// 		}
+			
+			//case 3) continue 사용
+			if((i % 2)){ //홀수인경우 1, 짝수는 0 
+				//홀수인 경우 수행
+				continue;
+			}
+			sum += i;
+		}
+		document.getElementById("result2").innerHTML = sum;
+	}
+
+		
+	//3. 사용자가 입력한 값을 계속 더하고, 사용자가 0을 입력하면 그때까지 누적된 값을 출력하는 프로그램을 작성하시오
+	function sum3(){
+		var flag = true;
+		sum = 0;
+		while(flag){
+			var input = parseInt(prompt("정수를 입력해주세요"));
+			sum += input;
+			if(input == 0){
+				flag = false;
+			}
+		}
+		document.getElementById("result3").value = sum;
+
+
+	}
+	//4.다중 for문을 이용해서 1~ 10 까지 중 i와 k의 더한 합이 3의 배수일때만 출력 continue를 이용
+	function sum4(){
+		document.getElementById("result4").innerHTML = ""; //결과영역 빈값으로 초기화 해주기 => 버튼 누를때마다 새로하기 위해
+		for(var i = 1; i<=10; i++){
+			for(var k=1; k<=10; k++){
+				if((i + k) % 3 == 0){
+					document.getElementById("result4").innerHTML += "i: " + i + " + " +"k:" + k +"" +"<br>";
+				}else {
+					continue;
+				}
+			}
+		}
+	}
+	//5.1~100 까지 중 2의 배수이면서 3의 배수인것만 출력
+	function sum5(){
+		document.getElementById("result5").innerHTML = ""; 
+		for(var i = 1; i <= 100; i++){
+			if(i % 2 == 0 && i % 3 == 0){
+				document.getElementById("result5").innerHTML += "i: " + i + "<br>";
+			}
+		}
+	}
+	// 두 수를 입력(prompt) 두수의 합이 100이상 일 때만 출력 continue를 이용 , 두수 모두 0 이 입력되면 종료
+	function sum6(){
+		flag = true;
+		sum = 0;
+		while(flag){
+			var input1 = parseInt(prompt("정수를 입력해주세요"));
+			var input2 = parseInt(prompt("정수를 입력해주세요"));
+			sum = input1 + input2;
+				if(sum >= 100){
+					alert(sum);
+				}else if(input1 == 0 && input2 ==0){
+					flag = false;
+				}else{
+					continue;
+				}
+			}		
+		}
+	}
+
+	</script>
+</head>
+<body>
+	<h3>1부터 10까지의 합을 구하는 프로그램</h3>
+	<button type="button" onclick="sum1()">계산</button>
+	<p id="result"></p>
+	<hr>
+	
+	<h3>1부터 200까지의 짝수의 합을 구하는 프로그램을 작성하시오.(continue를 이용)</h3>
+	<button type="button" onclick="sum2()">계산</button>
+	<p id="result2"></p>
+	<hr>
+	
+	<h3>사용자가 입력한 값을 계속 더하고, 사용자가 0을 입력하면 그때까지 누적된 값을 출력하는 프로그램을</h3>
+	<input type="text" onclick="sum3()" id="result3">
+<!-- 	<p id="result3"></p> -->
+	<hr>
+	
+	<h3>다중 for문을 이용해서 1~ 10 까지 중 i와 k의 더한 합이 3의 배수일때만 출력 continue를 이용</h3>
+	<button type="button" onclick="sum4()">계산</button>
+	<p id="result4"></p>
+	<hr>
+	
+	<h3> 1~100 까지 중 2의 배수이면서 3의 배수인것만 출력</h3>
+	<button type="button" onclick="sum5()">계산</button>  <!-- type을 안쓰면 자동으로 submit으로 작동함  -->
+	<p id="result5"></p>
+	<hr>
+	
+	<h3> 두 수를 입력(prompt) 두수의 합이 100이상 일 때만 출력 continue를 이용 , 두수 모두 0 이 입력되면 종료</h3>
+	<input type="text" onclick="sum6()">
+	<p id="result6"></p>
+<!-- 	<textarea id="result6" rows="2" cols="50"></p> => 텍스트에어리어는 사용자가 입력할 수 있어서 동작안할 수 있음 // 사용자가 입력하는 부분이므로 .innerHTML이 아닌 .value로 사용해야됨
+																									 why => 안그럼 처음에 초기화 제외 사용자가 입력하면 value는 값이 바뀌지만 
+																									 		innerHTML은 값이 안바뀜 만약 사용하고 싶으면 readonly를 사용해야함 
+													    ※ 텍스트에어리어보단 p태그와 div로 사용이 적절함-->
+</body>
+</html>

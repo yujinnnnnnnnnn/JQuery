@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		/*if문 사용*/
+	//현재 시간을 가지고 와서 영어로 인사 메세지(alert)
+		var currhour = new Date().getHours(); //현재 시간 생성
+		
+		//12시 이전 : 굿모닝
+		var msg = ""; //alert대신 변수를 만들어서 사용
+		if(currhour < 12){
+		//	alert("Good morning")
+			msg = "Good morning";
+		}else if(currhour < 18){  // 18시 이전 : 굿애프너눈 
+		//	alert("Good afternoon")
+			msg = "Good afternoon";
+		}else {  // 18시 이후 : 굿이브닝
+		//	alert("Good evening")
+			msg = "Good evening";
+		}
+		
+		//alert(msg);
+		document.write(msg);
+	
+		/*switch문 사용*/
+		var grade = prompt("학점을 입력하세요.", "A~F 사이의 문자로 입력");
+		
+		//학점이 A일때 '참잘했어요'
+		//학점이 B일때 '잘했어요'
+		//...F일때 '재수강 하세요'
+		switch(grade){
+		case 'A':
+			alert("참잘했어요");
+			break;
+		case 'B':
+			alert("잘했어요");
+			break;
+		case 'C':
+			alert("보통");
+			break;
+		case 'D':
+			alert("분발");
+			break;
+		case 'E':
+			alert("더분발");
+			break;
+		case 'F':
+			alert("재수강");
+			break;
+		default:
+			alert("입력값 오류  (입력값: " + grade + ")");
+		}
+		
+
+		
+		
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

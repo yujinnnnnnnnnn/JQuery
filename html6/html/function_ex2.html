@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function calculate(a, b){
+			return a + b;
+		}
+		
+		// 화면이 로딩되면서  calculate 호출
+		window.onload = function(){ //window가 로드가 되면 function 수행하겠다는 뜻
+// 			var result = calculate(10, 20);
+// 			console.log(document.getElementById("tmp"));
+// 			document.getElementById("tmp").innerHTML = result;
+			document.getElementById("tmp").innerHTML = calculate(10, 20);
+		}
+		
+	</script>
+</head>
+<body>
+	<p id="tmp"></p>
+	
+	
+</body>
+</html>

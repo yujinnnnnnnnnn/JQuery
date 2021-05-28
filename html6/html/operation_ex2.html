@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JS 연산자</title>
+</head>
+<body>
+	<p id="result">결과는~~~~~</p>
+</body>
+	<script type="text/javascript">
+		// 사용자로부터 값을 2개를 입력받아서 그 합을 화면에 나타내기 
+		
+		//alert("안녕"); ==> [확인]버튼만 있는 메시지 박스
+		// [확인][취소][input]이 있는 메세지 박스 /prompt의 리턴값이 사용자 입력값 
+		//var value = prompt("정수값을 입력하세여.", "정수만 입력 ");//사용자 입력할 수이씨는 메세지 박스가 나옴 / 두번째 값은 입력창에 뜸
+		
+		var value1, value2;
+		value1 = prompt("정수값을 입력하세여.", "정수만 입력 "); //==>10
+		value2 = prompt("정수값을 입력하세여.", "정수만 입력 "); //==>20
+		
+		var sum;
+		//sum = value1 + value2; //String값으로 왔기때문에 1020으로 나옴
+		sum = parseInt(value1) + parseInt(value2);
+		
+		document.write(sum);
+		//document.getElementById("result").innerHTML =="결과는~~~~"
+		document.getElementById("result").innerHTML = "결과는 : " + sum + "입니다."; //p태그의 결과는~~~이 sum 으로 바뀜
+		//p태그가 먼저 생성되었기 때문에 결과값이 먼저나옴 / 만들어진 p태그를 바꾼것	
+	</script>
+</html>
