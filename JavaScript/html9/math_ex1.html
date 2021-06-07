@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		//Math.random() : 0 ~ !1
+		//Math.random() * 10 : 0 ~ !10 (0~9.99999)
+		//Math.random() * 10 + 1 : 1 ~ !11 (0~9.99999)
+	// 		var comNumber = Math.floor(Math.random() * 10 +1);
+			var comNumber = parseInt(Math.random() * 10 +1);  
+		function guessNum(){
+	
+			var userNumber = document.getElementById("number").value;
+			console.log(userNumber);
+			var result = "";
+			if(userNumber == comNumber) {
+				result = "정답입니다.";
+			}else {
+				if(userNumber > comNumber) {
+					result = "더 작은 숫자 입니다.";
+				}else{
+					result = "더 큰 숫자 입니다.";
+				}
+			}
+			document.getElementById("result").innerHTML = result;
+		}
+		
+
+		function game(){
+			var data = ["가위", "바위", "보"];
+			var index = parseInt(Math.random() * 3);
+			
+			var com = data[index];
+			var user = prompt("가위, 바위, 보 중 하나를 입력하세요");
+			var userIdx = data.indexOf(user);
+			
+			var result2 = "컴퓨터 : " + com + " / user :" + user;
+			if(userIdx == -1){
+				result2 += " [잘못입력하셨습니다.]"
+			}else {
+				if(user == com){
+					 result2 += " 비겼습니다."
+				}else if((user =="가위"&& com == "보") ||(user == "바위" && com == "가위" || (user == "보" && com == "주먹"))){
+					result2 += " [당신이 이겼습니다]."
+				}else {
+					result2 += " [당신이 졌습니다.]"
+				}
+			}
+			document.getElementById("result2").innerHTML = result2;
+		}
+		
+		function lotto(){
+			var lotto = [];
+			for(var i=0; i<6; i++){
+				lotto[i] = parseInt(Math.random() * 45 + 1);
+				for(var j = 0; j < i; j++){
+					if( lotto[i] == lotto[j]){
+						i--;
+					}
+				}
+			}
+			console.log(lotto);
+			document.getElementById("result3").innerHTML = lotto;
+		}
+		
+		
+	</script>
+</head>
+<body>
+	<h1>숫자 찾기</h1> 
+	<p>1부터 10사이의 숫자를 입력하세요</p>
+	<input type="text" id="number">
+	<button type="button" onclick="guessNum()">확인</button>
+	<p id="result"></p>
+	
+	<h1>가위바위보</h1> 
+	<button type="button" onclick="game()">게임시작</button>
+	<p id="result2"></p>
+	
+	<h1>로또 번호 생성</h1> 
+	<button type="button" onclick="lotto()">확인</button>
+	<div id="result3"></div>
+</body>
+</html>

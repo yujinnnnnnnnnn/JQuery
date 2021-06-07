@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		//반복되는 작업은 메서드로 만들어서 사용 //function을 위로 올리는게 좋음 차례대로 수행되기 때문에 아래있을경우 메서드만들기 전에 호출하는 상황이 발생함
+		function printArray(pArr){
+			//[사과 배 포도]
+				document.write("[");
+			for(var i= 0 ; i<pArr.length; i ++){
+				document.write(pArr[i] + " "); //'사과 배 포도' 
+			}
+			document.write("]"); //['사과 배 포도'] 
+			document.write("<br>"); 
+		}
+		
+// 		var arr1, arr2, arr3;
+		var arr1 = ["사과", "배", "포도"]; // 가장 좋음 이방법을 못쓰면 아래방법으로 사용함
+		
+		var arr2 = new Array("홍","길","동");
+		
+		var arr3 = new Array();
+		arr3[0] ="그";
+		arr3[1] ="만";
+		arr3[2] ="조";
+		arr3[3] ="슈";
+		
+		printArray(arr1);
+		printArray(arr2);
+		printArray(arr3);
+		
+		
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	//문제 1
+	function input() {
+		var arr = [];
+		while (true) {
+			var str = prompt("이름을 입력해주세요.");
+
+			if ((str == "") || (str == null)) {
+				break;
+		}
+		arr.push();
+		console.log(result);
+		document.getElementById("result").innerHTML = arr;
+	}
+	}
+	
+	//문제 2
+	
+	/*
+	정수입력받기
+	기존 입력이랑 중복 있는지 체크
+	중복엇으면 추가
+	주옥 있으면 pass
+	5개가 되었으면 끝
+	5개가  안되었으면 다시 입력
+	*/
+	
+	function input2(){
+		var num = [];
+		while(true){
+			var number = parseInt(prompt("정수를 입력해주세요"));
+				if(num.indexOf(number) == -1){
+					
+					if(num.push(number) == 5){
+						break;
+					}
+				}
+			
+			}
+		document.getElementById("result2").innerHTML = "정렬전 : " + num;
+		num.sort(function(a, b){ return a - b; });
+
+		console.log(num);
+		document.getElementById("result3").innerHTML = "정렬 후 : " + num;
+	}
+
+</script>
+</head>
+<body>
+	<h3>문제 1</h3>
+	<button type="button" onclick="input()">클릭</button>
+	<div id="result"></div>
+
+	<h3>문제 2</h3>
+	<button type="button" onclick="input2()">클릭</button>
+	<div id="result2"></div>
+	<div id="result3"></div>
+
+</body>
+</html>

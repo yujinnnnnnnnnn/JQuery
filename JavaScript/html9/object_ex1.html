@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		//리터럴로부터 객체 생성
+		var myCar = {  //객체는 중괄호 배열은 대괄호
+				model : "kia"
+				,year : 2021
+				,color : "blue"
+				,speed : 0
+				, brake : function(){  //함수명이 앞으로 빠진 모양 //동작이여서 함수사용
+					this.speed -= 10;  //brake 호출하면 speed가 -10 만큼 줄어듬 // myCar 객체의 speed의 속도를 줄여야하므로 this.을 붙임
+				}
+				,accel : function(){
+					this.speed += 10;					
+				}
+		};
+		
+		/*
+		//리턴하는 법(속성값 가져오기)
+		myCar.color; ==> "blue"
+		myCar.year; ==> 2021
+		
+		//속성값 세팅하기
+		myCar.year = 1999;
+		
+		//함수 accel 호출(사용하기)  
+		myCar.accel();
+		*/
+		document.write("모델 : ");
+		document.write(myCar.model);
+		document.write("<br>");
+		
+		document.write("속도 : ");
+		document.write(myCar.speed);
+		document.write("<br>");
+		
+		document.write("accel 호출");
+		document.write("<br>");
+		myCar.accel();  //엑셀 함수 호출 (속도 증가시키기)
+		document.write("속도 : ");
+		document.write(myCar.speed);
+		document.write("<br>");
+		
+		document.write("brake 호출");
+		document.write("<br>");
+		myCar.brake(); //brake함수 호출 (속도 저하시키기)
+		document.write("속도 : ");
+		document.write(myCar.speed);
+		document.write("<br>");
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

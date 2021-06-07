@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		//new를 이용하여 생성방법
+		
+// 		new를 하기 위해선 그 객체타입이 존재해야함
+		function Car(model, speed){      //function도 객체임  // 파라미터를 받아서 생성할 수 있음 // 자바의 생성자 역할
+			this.model = model;  		//this.model을 (Car의 속성) 변수 model에 넣어줌 
+			this.speed = speed;
+			this.color = "white";
+			
+			//객체의 함수 (함수를 가지고 있는 속성 정의)
+			this.brake = function(){
+				this.speed -= 10;
+			}
+			this.accel = function(){
+				this.speed += 10;
+			}
+		}
+		
+// 		var myCar = new Car();
+		var myCar = new Car("morning", 200);
+		
+// 		속성표시
+// 		myCar.model; ==> "morning"
+// 		myCar["model"]; ==> "morning"
+
+		document.write("모델, 속도 : " + myCar.model + ", " + myCar.speed);
+		document.write("<br>");
+		
+		function brake(){
+			myCar.brake();  //브레이크 호출 ()를 사용하지 않으면 정의만 나옴
+			document.getElementById("result").innerHTML = myCar.speed;
+		}
+		
+		function accel(){
+			myCar.accel();
+			document.getElementById("result").innerHTML = myCar.speed;
+			
+			// 기존에 없던 속성을 추가(새롭게 정의)
+			myCar.turbo = true;
+			
+			myCar.showModel = function(){
+				alert("모델은 " + this.model + "입니다."); //현재 갖고있는 모델이라는 속성을 가져오라는 뜻
+			}
+			
+			myCar.showModel();
+			
+			// 속성 삭제
+			console.log(">>>>" + myCar.turbo);  //내가 찍은 로그를 명확하게 표현
+			delete myCar.turbo; 
+			console.log(">>>>" + myCar.turbo);
+		}
+	</script>
+</head>
+<body>
+	<button type="button" onclick="brake()">브레이크</button>
+	<button type="button" onclick="accel()">엑셀</button>
+	<p>자동차 속도 :<span id="result"></span></p>
+</body>
+</html>
